@@ -1,0 +1,24 @@
+.tab-indicator {
+  border-radius: 8px;
+  transition: transform 0.3s ease-out;
+}
+
+.translate-x-0 {
+  transform: translateX(0);
+}
+
+.translate-x-1 {
+  transform: translateX(100%);
+}
+
+.translate-x-2 {
+  transform: translateX(200%);
+}
+
+.translate-x-3 {
+  transform: translateX(300%);
+}
+
+.translate-x-4 {
+  transform: translateX(400%);
+}
