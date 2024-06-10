@@ -1,15 +1,11 @@
-import { BottomTabBar } from '@/components'
+import { NavBar } from '@/components'
+import Hero from '@/components/Hero'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col px-3 py-8 md:px-0">
-      <p>Vijay Gojiya</p>
+    <main className="h-screen overflow-hidden">
+      <NavBar />
+      <Hero />
     </main>
   )
 }
-
-// <Route index element={<HomePage />} />
-// <Route path="blogs" element={<BlogsPage />} />
-// <Route path="projects" element={<ProjectsPage />} />
-// <Route path="about" element={<AboutPage />} />
-// <Route path="skills" element={<SkillsPage />} />

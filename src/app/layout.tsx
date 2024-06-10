@@ -1,10 +1,15 @@
-import { Analytics, BottomTabBar, ThemeProvider } from '@/components'
+import { Analytics, ThemeProvider } from '@/components'
 import { cn } from '@/utils/utils'
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
 import './globals.css'
 
-const fontSans = Montserrat({ subsets: ['latin'], variable: '--font-sans' })
+import localFont from 'next/font/local'
+
+// Font files can be colocated inside of `pages`
+const myFonts = localFont({
+  src: '../assets/fonts/helvetica.woff',
+  variable: '--font-sans'
+})
 
 export const metadata: Metadata = {
   title: 'Vijay Gojiya | Cross-Platform Mobile Developer',
@@ -20,10 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn('bg-background', fontSans.variable)}>
+      <body
+        className={cn(
+          'bg-background min-h-screen font-sans antialiased',
+          myFonts.className
+        )}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           {children}
-          <BottomTabBar />
           <Analytics />
         </ThemeProvider>
       </body>
