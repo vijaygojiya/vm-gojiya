@@ -38,7 +38,7 @@ export default function Skills() {
   )
 }
 
-function BrushIcon(props) {
+function BrushIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -57,7 +57,7 @@ function BrushIcon(props) {
   )
 }
 
-function CodeIcon(props) {
+function CodeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -76,7 +76,7 @@ function CodeIcon(props) {
   )
 }
 
-function PuzzleIcon(props) {
+function PuzzleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -94,7 +94,7 @@ function PuzzleIcon(props) {
   )
 }
 
-function SmartphoneIcon(props) {
+function SmartphoneIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

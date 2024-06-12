@@ -50,7 +50,7 @@ const NavBar = () => {
 
 export default NavBar
 
-function CodeIcon(props) {
+function CodeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -69,7 +69,7 @@ function CodeIcon(props) {
   )
 }
 
-function MenuIcon(props) {
+function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

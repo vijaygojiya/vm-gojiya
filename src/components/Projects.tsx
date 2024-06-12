@@ -101,7 +101,7 @@ export default function Projects() {
   )
 }
 
-function StarIcon(props) {
+function StarIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
