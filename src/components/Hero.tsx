@@ -5,7 +5,6 @@ function Hero() {
     <section
       id="hero"
       className="relative h-[80vh] w-full bg-[url('/hero-bg.jpg')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-950/80" />
       <div className="container flex h-full flex-col items-center justify-center text-center text-white">
         <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
           Hi, I'm Vijay Gojiya
