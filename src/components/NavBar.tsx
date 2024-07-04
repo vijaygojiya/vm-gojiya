@@ -1,7 +1,16 @@
 'use client'
 
+import { CodeIcon, MenuIcon } from '@/assets/icons'
 import Link from 'next/link'
+import { FC, PropsWithChildren } from 'react'
 import { Button } from './ui/button'
+
+const links = [
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' }
+]
 
 const NavBar = () => {
   return (
@@ -15,30 +24,11 @@ const NavBar = () => {
           <span>Vijay Gojiya</span>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          <Link
-            href="#"
-            className="hover:text-gray-900 dark:hover:text-gray-50"
-            prefetch={false}>
-            About
-          </Link>
-          <Link
-            href="#"
-            className="hover:text-gray-900 dark:hover:text-gray-50"
-            prefetch={false}>
-            Skills
-          </Link>
-          <Link
-            href="#"
-            className="hover:text-gray-900 dark:hover:text-gray-50"
-            prefetch={false}>
-            Projects
-          </Link>
-          <Link
-            href="#"
-            className="hover:text-gray-900 dark:hover:text-gray-50"
-            prefetch={false}>
-            Contact
-          </Link>
+          {links.map((link) => (
+            <NavLink key={link.href} href={link.href}>
+              {link.label}
+            </NavLink>
+          ))}
         </nav>
         <Button variant="ghost" size="icon" className="md:hidden">
           <MenuIcon className="h-6 w-6" />
@@ -48,43 +38,13 @@ const NavBar = () => {
   )
 }
 
+const NavLink: FC<PropsWithChildren<{ href: string }>> = ({ href, children }) => (
+  <Link
+    href={href}
+    className="hover:text-gray-900 dark:hover:text-gray-50"
+    prefetch={false}>
+    {children}
+  </Link>
+)
+
 export default NavBar
-
-function CodeIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
-    </svg>
-  )
-}
-
-function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
-  )
-}

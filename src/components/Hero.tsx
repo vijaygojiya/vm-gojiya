@@ -15,13 +15,13 @@ function Hero() {
         </p>
         <div className="mt-8 flex gap-4">
           <Link
-            href="#"
+            href="#projects"
             className="inline-flex items-center justify-center rounded-md bg-orange-500 px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-600"
             prefetch={false}>
             View Projects
           </Link>
           <Link
-            href="#"
+            href="#contact"
             className="inline-flex items-center justify-center rounded-md border border-white bg-transparent px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             prefetch={false}>
             Contact Me
