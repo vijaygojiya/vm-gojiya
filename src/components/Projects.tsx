@@ -8,7 +8,7 @@ const projects = [
     description: 'Online learning app with modern features and cool UI',
     imgSrc: '/placeholder.svg',
     apk: 'https://drive.google.com/file/d/1eV8amYYKQV8_Nit6sMdKH3xkRxJAJouQ/view?usp=drive_link',
-    github: 'https://github.com/vijaygojiya/Musify'
+    github: 'https://github.com/vijaygojiya/Coursify'
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const projects = [
     description: 'Music player app build using React Native',
     imgSrc: '/placeholder.svg',
     apk: 'https://drive.google.com/file/d/1Ynsgk-JUm_CU_h-vnkZ-HU9Z3vjb454R/view?usp=drive_link',
-    github: 'https://github.com/vijaygojiya/Coursify'
+    github: 'https://github.com/vijaygojiya/Musify'
   }
 ]
 
