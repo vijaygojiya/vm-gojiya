@@ -17,12 +17,13 @@ export default function About() {
             I'm a team player and enjoy collaborating with designers, product managers,
             and other developers to bring ideas to life.
           </p>
-          <Link
-            href="#"
+          <a
+            download='vijay-gojiya'
+            href="/resume.pdf"
             className="inline-flex items-center justify-center rounded-md bg-orange-500 px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-600"
-            prefetch={false}>
+           >
             Download CV
-          </Link>
+          </a>
         </div>
         <div className="flex justify-center">
           <img
