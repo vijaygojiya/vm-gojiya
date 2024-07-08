@@ -1,4 +1,3 @@
-import { StarIcon } from '@/assets/icons'
 import Link from 'next/link'
 import { Card, CardContent } from './ui/card'
 
@@ -8,14 +7,16 @@ const projects = [
     title: 'Coursify',
     description: 'Online learning app with modern features and cool UI',
     imgSrc: '/placeholder.svg',
-    rating: 4.8
+    apk: 'https://drive.google.com/file/d/1eV8amYYKQV8_Nit6sMdKH3xkRxJAJouQ/view?usp=drive_link',
+    github: 'https://github.com/vijaygojiya/Musify'
   },
   {
     id: 2,
     title: 'Musify',
     description: 'Music player app build using React Native',
     imgSrc: '/placeholder.svg',
-    rating: 4.6
+    apk: 'https://drive.google.com/file/d/1Ynsgk-JUm_CU_h-vnkZ-HU9Z3vjb454R/view?usp=drive_link',
+    github: 'https://github.com/vijaygojiya/Coursify'
   }
 ]
 
@@ -47,15 +48,21 @@ const ProjectCard = ({ project }: { project: (typeof projects)[number] }) => (
         <p className="mb-4 text-gray-600 dark:text-gray-400">{project.description}</p>
         <div className="flex items-center justify-between">
           <Link
-            href="#"
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-md bg-orange-500 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-600"
             prefetch={false}>
             View Project
           </Link>
-          <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
-            <StarIcon className="h-5 w-5" />
-            <span>{project.rating}</span>
-          </div>
+          <Link
+            href={project.apk}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-600"
+            prefetch={false}>
+            Download APK
+          </Link>
         </div>
       </div>
     </CardContent>

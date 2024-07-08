@@ -12,23 +12,26 @@ export default function Footer() {
             height={40}
             className="mr-4"
           />
-          <p>&copy; 2023 Portfolio. All rights reserved.</p>
+          <p>&copy; 2024 . All rights reserved.</p>
         </div>
         <div className="flex space-x-4">
           <Link
-            href="#"
+            href="https://github.com/vijaygojiya"
+            target="_blank"
             className="text-gray-400 transition-colors hover:text-gray-100"
             prefetch={false}>
             <GithubIcon className="h-6 w-6" />
           </Link>
           <Link
-            href="#"
+            href="https://www.linkedin.com/in/vijay-gojiya/"
+            target="_blank"
             className="text-gray-400 transition-colors hover:text-gray-100"
             prefetch={false}>
             <LinkedinIcon className="h-6 w-6" />
           </Link>
           <Link
-            href="#"
+            href=" https://x.com/vm_gojiya?s==09"
+            target="_blank"
             className="text-gray-400 transition-colors hover:text-gray-100"
             prefetch={false}>
             <TwitterIcon className="h-6 w-6" />
