@@ -7,7 +7,7 @@ const projects = [
     title: 'Coursify',
     description: 'Online learning app with modern features and cool UI',
     imgSrc: '/coursify.svg',
-    apk: 'https://drive.google.com/file/d/1eV8amYYKQV8_Nit6sMdKH3xkRxJAJouQ/view?usp=drive_link',
+    apk: 'https://drive.google.com/file/d/1VEjcrfh7IQYz8reHBjrhtxnd_EQCZGc6/view?usp=drive_link',
     github: 'https://github.com/vijaygojiya/Coursify'
   },
   {
