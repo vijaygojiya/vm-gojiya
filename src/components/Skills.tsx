@@ -1,59 +1,112 @@
 export default function Skills() {
+  const skillCategories = [
+    {
+      title: 'Core Technologies',
+      skills: ['React Native', 'TypeScript', 'JavaScript', 'Expo', 'Bare Workflow']
+    },
+    {
+      title: 'State Management',
+      skills: ['Redux', 'Zustand', 'React Query', 'Context API', 'MobX']
+    },
+    {
+      title: 'Mobile Platforms',
+      skills: ['iOS Development', 'Android Development', 'App Store', 'Play Store', 'Testflight']
+    },
+    {
+      title: 'Backend & APIs',
+      skills: ['REST APIs', 'GraphQL', 'Firebase', 'Authentication', 'Real-time Data']
+    },
+    {
+      title: 'Payments & Integration',
+      skills: ['Stripe', 'Razorpay', 'Payment Gateways', 'In-app Purchases', 'Webhooks']
+    },
+    {
+      title: 'Advanced Features',
+      skills: ['Reanimated', 'Gesture Handler', 'Deep Linking', 'Push Notifications', 'Native Modules']
+    },
+    {
+      title: 'Maps & Location',
+      skills: ['Google Maps', 'GPS Tracking', 'Geolocation', 'Route Planning', 'Location Services']
+    },
+    {
+      title: 'Development Tools',
+      skills: ['Git/GitHub', 'CI/CD', 'Fastlane', 'EAS Build', 'Debugging', 'Performance Optimization']
+    }
+  ]
+
   return (
-    <section id="skills" className="bg-gray-100 py-20 dark:bg-gray-950">
+    <section id="skills" className="bg-muted/30 py-20 dark:bg-muted/10">
       <div className="container">
-        <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">My Skills</h2>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-          <div className="flex flex-col items-center justify-center rounded-lg bg-white p-6 shadow-md dark:bg-gray-900">
-            <CodeIcon className="mb-4 h-12 w-12 text-orange-500" />
-            <h3 className="mb-2 text-lg font-medium">React Native</h3>
-            <p className="text-center text-gray-600 dark:text-gray-400">
-              Experienced in building cross-platform mobile apps using React Native.
+        <div className="mb-16 max-w-3xl">
+          <span className="inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-4">
+            Technical Expertise
+          </span>
+          <h2 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+            Technologies & Tools
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            A comprehensive set of skills covering the entire mobile development stack, from frontend to backend integrations.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {skillCategories.map((category, idx) => (
+            <div
+              key={idx}
+              className="rounded-lg border border-border bg-background p-6 shadow-sm transition-all hover:shadow-lg dark:bg-background">
+              <h3 className="mb-4 font-bold text-foreground text-lg">{category.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill, i) => (
+                  <span
+                    key={i}
+                    className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="rounded-lg border border-border bg-gradient-to-br from-blue-50 to-blue-50/50 p-8 text-center dark:from-blue-900/20 dark:to-blue-900/10">
+            <div className="mb-4 flex justify-center">
+              <div className="rounded-full bg-blue-100 p-4 dark:bg-blue-900/30">
+                <CodeIcon className="h-8 w-8 text-primary" />
+              </div>
+            </div>
+            <h4 className="mb-2 font-bold text-foreground">Production Ready</h4>
+            <p className="text-sm text-muted-foreground">
+              All apps follow best practices and are optimized for performance and user experience.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center rounded-lg bg-white p-6 shadow-md dark:bg-gray-900">
-            <SmartphoneIcon className="mb-4 h-12 w-12 text-orange-500" />
-            <h3 className="mb-2 text-lg font-medium">Android & iOS</h3>
-            <p className="text-center text-gray-600 dark:text-gray-400">
-              Proficient in both Android and iOS development.
+
+          <div className="rounded-lg border border-border bg-gradient-to-br from-green-50 to-green-50/50 p-8 text-center dark:from-green-900/20 dark:to-green-900/10">
+            <div className="mb-4 flex justify-center">
+              <div className="rounded-full bg-green-100 p-4 dark:bg-green-900/30">
+                <RocketIcon className="h-8 w-8 text-accent" />
+              </div>
+            </div>
+            <h4 className="mb-2 font-bold text-foreground">Deployment Expert</h4>
+            <p className="text-sm text-muted-foreground">
+              Experience deploying to App Store and Play Store. Familiar with all submission processes.
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center rounded-lg bg-white p-6 shadow-md dark:bg-gray-900">
-            <BrushIcon className="mb-4 h-12 w-12 text-orange-500" />
-            <h3 className="mb-2 text-lg font-medium">UI/UX Design</h3>
-            <p className="text-center text-gray-600 dark:text-gray-400">
-              Skilled in creating visually appealing and user-friendly interfaces.
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-center rounded-lg bg-white p-6 shadow-md dark:bg-gray-900">
-            <PuzzleIcon className="mb-4 h-12 w-12 text-orange-500" />
-            <h3 className="mb-2 text-lg font-medium">Problem Solving</h3>
-            <p className="text-center text-gray-600 dark:text-gray-400">
-              Adept at identifying and solving complex problems.
+
+          <div className="rounded-lg border border-border bg-gradient-to-br from-purple-50 to-purple-50/50 p-8 text-center dark:from-purple-900/20 dark:to-purple-900/10">
+            <div className="mb-4 flex justify-center">
+              <div className="rounded-full bg-purple-100 p-4 dark:bg-purple-900/30">
+                <SparklesIcon className="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              </div>
+            </div>
+            <h4 className="mb-2 font-bold text-foreground">Continuous Learning</h4>
+            <p className="text-sm text-muted-foreground">
+              Always up-to-date with latest React Native features and industry best practices.
             </p>
           </div>
         </div>
       </div>
     </section>
-  )
-}
-
-function BrushIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08" />
-      <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z" />
-    </svg>
   )
 }
 
@@ -76,7 +129,7 @@ function CodeIcon(props: React.SVGProps<SVGSVGElement>) {
   )
 }
 
-function PuzzleIcon(props: React.SVGProps<SVGSVGElement>) {
+function RocketIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -89,12 +142,13 @@ function PuzzleIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round">
-      <path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z" />
+      <path d="M4.5 16.5c-1.5-1.26-2.5-3.44-2.5-5.5a6 6 0 0 1 6-6c1.05 0 2.04.16 3 .48 2.84-1.94 5.5-4.3 6.5-6.5.5 1.62.29 3.68-.44 5.7.44.5.8 1.04 1.08 1.63.8 2.08.8 4.58 0 6.66-.41 1.08-1.04 2.09-1.8 3.02-2.05 2.42-5.7 4.8-9.35 4.8-2.06 0-4-1-5-2.5z" />
+      <path d="M12 15v5M9 20.875a1 1 0 1 0 2 0M15 20.875a1 1 0 1 0 2 0" />
     </svg>
   )
 }
 
-function SmartphoneIcon(props: React.SVGProps<SVGSVGElement>) {
+function SparklesIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -107,8 +161,9 @@ function SmartphoneIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round">
-      <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-      <path d="M12 18h.01" />
+      <path d="M12 2v6m0 4v6M4.22 4.22l4.24 4.24m2.54 2.54l4.24 4.24M2 12h6m4 0h6M4.22 19.78l4.24-4.24m2.54-2.54l4.24-4.24M19.78 19.78l-4.24-4.24m-2.54-2.54l-4.24-4.24M19.78 4.22l-4.24 4.24m-2.54 2.54l-4.24 4.24M22 12h-6m-4 0H4" />
     </svg>
   )
 }
+
+

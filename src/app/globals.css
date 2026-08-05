@@ -3,31 +3,65 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Primary Brand Colors */
+  --primary: 217 70% 49%; /* Blue #3B82F6 */
+  --primary-foreground: 0 0% 100%; /* White */
+  
+  /* Neutral Colors */
+  --background: 0 0% 100%; /* White */
+  --foreground: 222 84% 5%; /* Slate 900 */
+  
+  /* Accents & Utility */
+  --accent: 142 72% 45%; /* Green #22C55E */
+  --accent-foreground: 0 0% 100%;
+  
+  --secondary: 220 13% 47%; /* Slate 500 */
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 220 13% 91%; /* Slate 100 */
+  --muted-foreground: 220 10% 40%; /* Slate 600 */
+  
+  --border: 220 13% 91%; /* Slate 100 */
+  --input: 220 13% 91%; /* Slate 100 */
+  --ring: 217 70% 49%; /* Blue */
+  
+  --radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 222 84% 5%; /* Slate 900 */
+    --foreground: 220 13% 98%; /* Slate 50 */
+    
+    --accent: 142 72% 45%; /* Green #22C55E */
+    --accent-foreground: 222 84% 5%;
+    
+    --secondary: 220 13% 58%; /* Slate 400 */
+    --secondary-foreground: 222 84% 5%;
+    
+    --muted: 222 84% 12%; /* Slate 800 */
+    --muted-foreground: 220 13% 58%; /* Slate 400 */
+    
+    --border: 222 84% 12%; /* Slate 800 */
+    --input: 222 84% 12%; /* Slate 800 */
   }
 }
 
+* {
+  @apply border-border;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-background text-foreground;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
