@@ -3,66 +3,70 @@ import { Card, CardContent } from './ui/card'
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Ride Sharing App',
-      role: 'Production App',
+      name: 'Self Ride',
+      role: 'Ride-Sharing Platform',
       description:
-        'Built a full-featured ride-sharing app with real-time location tracking, payment integration, push notifications, and deep links. Successfully deployed to both iOS App Store and Google Play Store.',
-      metrics: ['10K+ Downloads', 'Real-time GPS', 'Payment Ready', 'Full-featured']
+        'Full-featured ride-sharing application with real-time GPS location tracking using Google Maps, Stripe payment integration, push notifications, deep linking, and Sentry error monitoring. Production-grade app with 10K+ downloads.',
+      metrics: ['GPS Tracking', 'Stripe Payments', 'Notifications', 'Sentry Monitoring']
     },
     {
-      name: 'Social Media App',
-      role: 'Production App with Chat',
+      name: 'LexVid',
+      role: 'Video Streaming App',
       description:
-        'Developed a complete social media platform with messaging functionality, user authentication, media uploads, and complex state management using Redux. Includes real-time chat capabilities.',
-      metrics: ['Chat Functionality', 'Media Support', 'Redux State', 'User Auth']
+        'Video platform with download functionality, offline playback support, and optimized performance. Implements React Query for efficient server state management and seamless user experience.',
+      metrics: ['Video Download', 'Offline Support', 'React Query', 'Streaming']
     },
     {
-      name: 'E-Learning Platform',
-      role: 'Coursify - Educational App',
+      name: 'The R & I Guys',
+      role: '100% TypeScript Production App',
       description:
-        'Created an online learning application with course browsing, video playback, progress tracking, and payment integration. Modern UI with smooth animations and great UX.',
-      metrics: ['Video Support', 'Progress Tracking', 'Payments', 'Modern UI']
+        'End-to-end production application built with 100% TypeScript for maximum type safety. Pixel-perfect UI following best practices with clean API integration and professional architecture.',
+      metrics: ['100% TypeScript', 'Pixel Perfect', 'Best Practices', 'Both Stores']
     },
     {
-      name: 'Music Player App',
-      role: 'Musify - Media Application',
+      name: 'Multitax',
+      role: 'Dynamic Form Management',
       description:
-        'Built a music player application with playlist management, audio controls, and intuitive navigation. Demonstrates expertise in audio handling and smooth user interactions.',
-      metrics: ['Audio Control', 'Playlists', 'Navigation', 'Smooth UX']
+        'Complex financial app featuring dynamic form rendering with intelligent field management and advanced file upload capabilities for document handling. Multi-step workflows and real-time validation.',
+      metrics: ['Dynamic Forms', 'File Upload', 'Validation', 'Multi-step']
+    },
+    {
+      name: 'Angel Protection',
+      role: 'Emergency Alert System',
+      description:
+        'Critical alert and notification system with real-time emergency capabilities. Recently upgraded to latest dependencies and deployed to both App Store and Play Store with enhanced stability.',
+      metrics: ['Critical Alerts', 'Real-time', 'Latest Stack', 'Emergency Ready']
+    },
+    {
+      name: 'Revolt Apps',
+      role: 'Streaming & Event Platform',
+      description:
+        'Large-scale streaming and event management platform featuring live streaming, user engagement tools, real-time synchronization, and scalable architecture for high-volume traffic.',
+      metrics: ['Live Streaming', 'Events', 'Real-time Sync', 'Scalable']
     }
   ]
 
   return (
-    <section id="testimonials" className="bg-background py-20 dark:bg-background">
+    <section id="testimonials" className="bg-background py-20">
       <div className="container">
         <div className="mb-16 max-w-3xl">
-          <span className="inline-block rounded-full bg-purple-100 px-4 py-2 text-sm font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 mb-4">
-            Case Studies
-          </span>
-          <h2 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-            Apps I've Built
-          </h2>
+          <span className="text-sm font-medium text-primary mb-4">Case Studies</span>
+          <h2 className="mb-6 text-5xl font-bold tracking-tight text-foreground">Complete Portfolio</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            A portfolio of production applications showcasing my expertise in building scalable, feature-rich mobile experiences.
+            6 production applications with thousands of downloads across iOS and Android platforms.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((project, idx) => (
-            <Card
-              key={idx}
-              className="overflow-hidden border border-border bg-muted/50 shadow-sm transition-all hover:shadow-lg hover:border-primary/50 dark:bg-muted/20">
-              <CardContent className="p-8">
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-foreground">{project.name}</h3>
-                  <p className="text-sm text-primary font-semibold mt-1">{project.role}</p>
-                </div>
-                <p className="mb-6 text-muted-foreground leading-relaxed">{project.description}</p>
+            <Card key={idx} className="border border-border bg-background">
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-bold text-foreground">{project.name}</h3>
+                <p className="mb-4 text-xs font-medium text-primary">{project.role}</p>
+                <p className="mb-4 text-sm text-muted-foreground leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.metrics.map((metric, i) => (
-                    <span
-                      key={i}
-                      className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                  {project.metrics.slice(0, 3).map((metric, i) => (
+                    <span key={i} className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">
                       {metric}
                     </span>
                   ))}
@@ -72,15 +76,13 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-lg border border-border bg-gradient-to-r from-blue-50 to-blue-50/50 p-8 text-center dark:from-blue-900/20 dark:to-blue-900/10">
-          <h3 className="mb-2 text-2xl font-bold text-foreground">Ready to Start Your Project?</h3>
-          <p className="mb-6 text-muted-foreground">
-            Let's discuss your mobile app idea and bring it to life with expertise and attention to detail.
-          </p>
+        <div className="mt-16 border-t border-border pt-16 text-center">
+          <h3 className="mb-4 text-2xl font-bold text-foreground">Ready to Start Your Project?</h3>
+          <p className="mb-8 text-muted-foreground">Let me help you build your next amazing mobile app.</p>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-base font-semibold text-primary-foreground shadow-lg transition-all hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background">
-            Get In Touch
+            className="inline-flex items-center justify-center rounded-lg bg-foreground px-8 py-3 text-sm font-medium text-background hover:opacity-80 transition-opacity">
+            Get in Touch
           </a>
         </div>
       </div>

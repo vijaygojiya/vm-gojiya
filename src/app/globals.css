@@ -4,40 +4,40 @@
 
 :root {
   /* Primary Brand Colors */
-  --primary: 217 70% 49%; /* Blue #3B82F6 */
-  --primary-foreground: 0 0% 100%; /* White */
+  --primary: 14 87% 59%; /* Orange #FF6B35 */
+  --primary-foreground: 0 0% 0%; /* Black */
   
-  /* Neutral Colors */
-  --background: 0 0% 100%; /* White */
-  --foreground: 222 84% 5%; /* Slate 900 */
+  /* Neutral Colors - Dark Theme */
+  --background: 0 0% 5%; /* Almost black #0d0d0d */
+  --foreground: 0 0% 100%; /* White */
   
   /* Accents & Utility */
-  --accent: 142 72% 45%; /* Green #22C55E */
-  --accent-foreground: 0 0% 100%;
+  --accent: 14 87% 59%; /* Orange #FF6B35 */
+  --accent-foreground: 0 0% 0%;
   
-  --secondary: 220 13% 47%; /* Slate 500 */
+  --secondary: 0 0% 40%; /* Dark gray */
   --secondary-foreground: 0 0% 100%;
   
-  --muted: 220 13% 91%; /* Slate 100 */
-  --muted-foreground: 220 10% 40%; /* Slate 600 */
+  --muted: 0 0% 20%; /* Very dark gray */
+  --muted-foreground: 0 0% 70%; /* Light gray */
   
-  --border: 220 13% 91%; /* Slate 100 */
-  --input: 220 13% 91%; /* Slate 100 */
-  --ring: 217 70% 49%; /* Blue */
+  --border: 0 0% 15%; /* Dark border */
+  --input: 0 0% 10%; /* Dark input */
+  --ring: 14 87% 59%; /* Orange */
   
   --radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 222 84% 5%; /* Slate 900 */
-    --foreground: 220 13% 98%; /* Slate 50 */
+    --background: 0 0% 5%; /* Almost black #0d0d0d */
+    --foreground: 0 0% 100%; /* White */
     
-    --accent: 142 72% 45%; /* Green #22C55E */
-    --accent-foreground: 222 84% 5%;
+    --accent: 14 87% 59%; /* Orange #FF6B35 */
+    --accent-foreground: 0 0% 0%;
     
-    --secondary: 220 13% 58%; /* Slate 400 */
-    --secondary-foreground: 222 84% 5%;
+    --secondary: 0 0% 40%; /* Dark gray */
+    --secondary-foreground: 0 0% 100%;
     
     --muted: 222 84% 12%; /* Slate 800 */
     --muted-foreground: 220 13% 58%; /* Slate 400 */
@@ -64,4 +64,148 @@ body {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+/* Minimal grid background */
+@layer utilities {
+  .bg-grid-light {
+    background-image: 
+      linear-gradient(rgba(255, 107, 53, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 53, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .bg-grid-light-dark {
+    background-image: 
+      linear-gradient(rgba(255, 107, 53, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 53, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .glow-overlay {
+    position: relative;
+  }
+  
+  .glow-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .glow-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle at 80% 50%, rgba(255, 107, 53, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+}
+
+/* Modern gradient and glow effects */
+@layer utilities {
+  .glow-blur {
+    filter: blur(40px);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 60px 20px rgba(255, 107, 53, 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 60px 20px rgba(255, 107, 53, 0.1);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 60px 20px rgba(255, 107, 53, 0.1);
+  }
+
+  .glow-card {
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.08), 0 0 60px rgba(255, 107, 53, 0.04);
+  }
+
+  .glow-card-hover {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-card-hover:hover {
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.15), 0 0 80px rgba(255, 107, 53, 0.08);
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(255, 107, 53, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 53, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .bg-grid-dark {
+    background-image: 
+      linear-gradient(rgba(255, 107, 53, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 107, 53, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:rounded-lg before:p-[2px] before:bg-gradient-to-r before:from-orange-500 before:to-orange-400 before:pointer-events-none;
+  }
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Blob animation for floating background elements */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Radial gradient utility */
+.bg-radial-gradient {
+  background-image: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
 }
