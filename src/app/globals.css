@@ -65,3 +65,74 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Modern gradient and glow effects */
+@layer utilities {
+  .glow-blur {
+    filter: blur(40px);
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 60px 20px rgba(59, 130, 246, 0.1);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 60px 20px rgba(34, 197, 94, 0.1);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 60px 20px rgba(168, 85, 247, 0.1);
+  }
+
+  .glow-card {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.08), 0 0 60px rgba(59, 130, 246, 0.04);
+  }
+
+  .glow-card-hover {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-card-hover:hover {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.12), 0 0 80px rgba(59, 130, 246, 0.06);
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .bg-grid-dark {
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:rounded-lg before:p-[2px] before:bg-gradient-to-r before:from-blue-500 before:to-green-500 before:pointer-events-none;
+  }
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
