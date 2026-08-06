@@ -47,41 +47,26 @@ export default function Testimonials() {
   ]
 
   return (
-    <section id="testimonials" className="relative bg-background py-20 dark:bg-background overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-grid dark:bg-grid-dark pointer-events-none opacity-30" />
-      <div className="absolute top-40 right-20 w-96 h-96 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blur" />
-      <div className="absolute bottom-40 left-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blur" />
-      
-      <div className="container relative z-10">
+    <section id="testimonials" className="bg-background py-20">
+      <div className="container">
         <div className="mb-16 max-w-3xl">
-          <span className="inline-block rounded-full bg-purple-100 px-4 py-2 text-sm font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 mb-4">
-            Case Studies
-          </span>
-          <h2 className="mb-6 text-5xl font-bold tracking-tight md:text-6xl">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Complete Portfolio</span>
-          </h2>
+          <span className="text-sm font-medium text-primary mb-4">Case Studies</span>
+          <h2 className="mb-6 text-5xl font-bold tracking-tight text-foreground">Complete Portfolio</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            6 production applications with millions of users. Each project demonstrates deep expertise in building scalable, feature-rich, production-grade mobile experiences.
+            6 production applications with thousands of downloads across iOS and Android platforms.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((project, idx) => (
-            <Card
-              key={idx}
-              className="group relative overflow-hidden border border-border/50 bg-gradient-to-br from-background to-muted/30 shadow-sm transition-all duration-300 hover:shadow-2xl hover:border-primary/70 dark:bg-gradient-to-br dark:from-background dark:to-muted/20 glow-card-hover">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{project.name}</h3>
-                  <p className="text-sm bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent font-semibold mt-2">{project.role}</p>
-                </div>
-                <p className="mb-6 text-muted-foreground leading-relaxed text-sm">{project.description}</p>
+            <Card key={idx} className="border border-border bg-background">
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-bold text-foreground">{project.name}</h3>
+                <p className="mb-4 text-xs font-medium text-primary">{project.role}</p>
+                <p className="mb-4 text-sm text-muted-foreground leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.metrics.map((metric, i) => (
-                    <span
-                      key={i}
-                      className="rounded-full bg-gradient-to-r from-blue-50 to-green-50 px-3 py-1 text-xs font-medium text-blue-700 dark:from-blue-900/30 dark:to-green-900/30 dark:text-blue-300 border border-blue-200/50 dark:border-blue-800/50">
+                  {project.metrics.slice(0, 3).map((metric, i) => (
+                    <span key={i} className="text-xs px-2 py-1 rounded bg-muted text-muted-foreground">
                       {metric}
                     </span>
                   ))}
@@ -91,19 +76,14 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-20 relative rounded-2xl border border-border/50 bg-gradient-to-br from-purple-500/10 via-background to-pink-500/10 p-8 md:p-12 text-center overflow-hidden dark:from-purple-900/20 dark:via-background dark:to-pink-900/20 glow-card">
-          <div className="absolute inset-0 bg-grid dark:bg-grid-dark pointer-events-none opacity-20" />
-          <div className="relative z-10">
-            <h3 className="mb-2 text-3xl font-bold text-foreground">Transform Your Idea Into Reality</h3>
-            <p className="mb-8 text-muted-foreground text-lg">
-              With proven expertise across multiple app categories and millions of users, I'm ready to build your next success story.
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 text-base font-semibold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 dark:focus:ring-offset-background">
-              Start Your Project
-            </a>
-          </div>
+        <div className="mt-16 border-t border-border pt-16 text-center">
+          <h3 className="mb-4 text-2xl font-bold text-foreground">Ready to Start Your Project?</h3>
+          <p className="mb-8 text-muted-foreground">Let me help you build your next amazing mobile app.</p>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-lg bg-foreground px-8 py-3 text-sm font-medium text-background hover:opacity-80 transition-opacity">
+            Get in Touch
+          </a>
         </div>
       </div>
     </section>
