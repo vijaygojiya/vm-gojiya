@@ -2,8 +2,14 @@ import Link from 'next/link'
 
 function Hero() {
   return (
-    <section id="hero" className="min-h-screen w-full bg-background">
-      <div className="container mx-auto flex min-h-screen flex-col items-center justify-center px-6 py-20 text-center">
+    <section id="hero" className="relative min-h-screen w-full bg-background overflow-hidden">
+      {/* Grid background */}
+      <div className="absolute inset-0 bg-grid-light dark:bg-grid-light-dark pointer-events-none" />
+      
+      {/* Glow overlay */}
+      <div className="absolute inset-0 glow-overlay pointer-events-none" />
+      
+      <div className="container relative z-10 mx-auto flex min-h-screen flex-col items-center justify-center px-6 py-20 text-center">
         <div className="max-w-3xl space-y-6">
           {/* Badge */}
           <p className="text-sm font-medium text-primary">React Native Expert</p>
