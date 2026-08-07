@@ -21,15 +21,15 @@ export default function Contact() {
       icon: '💬',
       title: 'WhatsApp',
       description: 'Quick message or project inquiry',
-      link: 'https://wa.me/919624031330',
+      link: 'https://wa.me/917069414762',
       action: 'Send Message'
     },
     {
-      icon: '📅',
-      title: 'Calendly',
-      description: 'Schedule a consultation call',
-      link: 'https://calendly.com/vijaygojiya',
-      action: 'Book a Call'
+      icon: '✉',
+      title: 'Email',
+      description: 'Send me your project details',
+      link: 'mailto:vmgojiya32@gmail.com',
+      action: 'Send Email'
     },
     {
       icon: '💻',
@@ -43,10 +43,19 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate sending
-    setTimeout(() => {
-      setIsSubmitting(false)
-    }, 1000)
+
+    const formData = new FormData(e.currentTarget)
+    const name = String(formData.get('name') ?? '')
+    const email = String(formData.get('email') ?? '')
+    const project = String(formData.get('project') ?? '')
+    const message = String(formData.get('message') ?? '')
+    const subject = project ? `New project inquiry: ${project}` : 'New project inquiry'
+    const body = [`Name: ${name}`, `Email: ${email}`, project && `Project: ${project}`, '', message]
+      .filter(Boolean)
+      .join('\\n')
+
+    window.location.href = `mailto:vmgojiya32@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setIsSubmitting(false)
   }
 
   return (
