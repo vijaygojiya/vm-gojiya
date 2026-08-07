@@ -21,7 +21,7 @@ export default function Footer() {
     },
     {
       name: 'WhatsApp',
-      url: 'https://wa.me/919624031330',
+      url: 'https://wa.me/917069414762',
       icon: WhatsAppIcon
     }
   ]
