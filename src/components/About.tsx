@@ -1,100 +1,66 @@
-import Link from 'next/link'
-
 export default function About() {
   const highlights = [
-    { label: 'Years Experience', value: '4+' },
-    { label: 'Apps Deployed', value: '10+' },
-    { label: 'App Store & Play Store', value: 'Expert' },
-    { label: 'Native Modules', value: 'Turbo Module' }
+    { label: 'Experience', value: '4.5+ years' },
+    { label: 'Platforms', value: 'iOS + Android' },
+    { label: 'Codebase', value: '100% TypeScript' },
+    { label: 'Focus', value: 'Freelance work' },
+  ]
+
+  const strengths = [
+    'React Native app upgrades, migrations, and New Architecture adoption',
+    'Performance profiling, render optimization, and build-size reduction',
+    'Clean architecture across state management, navigation, APIs, and lists',
+    'Native modules and libraries built with Kotlin, Swift, and Turbo Modules',
+    'Production releases, CI/CD pipelines, and App Store and Play Store management',
   ]
 
   return (
-    <section id="about" className="bg-background py-20 dark:bg-background">
+    <section id="about" className="bg-background py-20">
       <div className="container">
-        <div className="mb-16 max-w-3xl">
-          <span className="inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-4">
-            About Me
-          </span>
-          <h2 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-            Building Production-Ready Mobile Apps
-          </h2>
-          <p className="mb-6 text-lg text-muted-foreground leading-relaxed">
-            With over 4 years of professional React Native experience, I've built and deployed multiple production apps across both iOS and Android platforms. My journey started in January 2022, and since then I've developed expertise in creating scalable, performant mobile applications using the latest technologies and best practices.
-          </p>
-          <p className="mb-6 text-lg text-muted-foreground leading-relaxed">
-            I'm passionate about solving complex technical challenges and delivering exceptional user experiences. From architecting complex state management solutions to integrating third-party services, I bring deep technical expertise and attention to detail to every project.
-          </p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-16">
-          {highlights.map((item, idx) => (
-            <div
-              key={idx}
-              className="rounded-lg border border-border bg-muted/50 p-6 text-center dark:bg-muted/20">
-              <p className="text-3xl font-bold text-primary mb-2">{item.value}</p>
-              <p className="text-sm text-muted-foreground">{item.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid gap-12 md:grid-cols-2 items-center">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
-            <h3 className="mb-6 text-2xl font-bold text-foreground">Key Expertise</h3>
-            <ul className="space-y-4">
-              {[
-                'React Native & Expo - Full development lifecycle',
-                'Native Module Development - Turbo Module architecture',
-                'State Management - Redux, Zustand, React Query',
-                'Payment Integration - Stripe, Razorpay',
-                'Deep Links & Push Notifications',
-                'App Store & Play Store Deployment',
-                'Advanced Animations - Reanimated & Gesture Handler',
-                'Third-party Library Integration & Updates'
-              ].map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <svg
-                    className="mt-1 h-5 w-5 flex-shrink-0 text-accent"
-                    fill="currentColor"
-                    viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-muted-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">About me</p>
+            <h2 className="mb-6 max-w-3xl text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+              A React Native developer for serious freelance projects.
+            </h2>
+            <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              I help startups and businesses build, improve, and ship reliable mobile products for Android and iOS. My work combines clean TypeScript architecture, thoughtful UX, and practical native development.
+            </p>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              Whether you need to modernize an existing app, solve a difficult integration, improve performance, or take a product from idea to release, I bring hands-on experience across the full React Native lifecycle.
+            </p>
           </div>
-          <div className="flex justify-center">
-            <img
-              src="/vm.jpg"
-              alt="Vijay Gojiya"
-              width={400}
-              height={400}
-              className="h-auto w-full max-w-[300px] rounded-lg shadow-xl"
-            />
+
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-2">
+            {highlights.map((item) => (
+              <div key={item.label} className="rounded-lg border border-border bg-muted/20 p-5">
+                <p className="text-xl font-bold text-foreground">{item.value}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
+              </div>
+            ))}
           </div>
+        </div>
+
+        <div className="mt-16 grid gap-10 border-t border-border pt-12 md:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">What you get</p>
+            <h3 className="text-2xl font-bold text-foreground">Clear thinking, clean code, dependable delivery.</h3>
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {strengths.map((strength) => (
+              <li key={strength} className="flex gap-3 text-muted-foreground">
+                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                <span>{strength}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="mt-12">
           <a
             download="Vijay-Gojiya-Resume"
             href="/resume.pdf"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg transition-all hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background">
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-              />
-            </svg>
+            className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-85">
             Download Resume
           </a>
         </div>

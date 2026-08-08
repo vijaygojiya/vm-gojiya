@@ -5,9 +5,6 @@ import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
 import Services from '@/components/Services'
-import Skills from '@/components/Skills'
-import Testimonials from '@/components/Testimonials'
-
 export default function Component() {
   return (
     <div className="flex min-h-screen flex-col bg-background dark:bg-background">
@@ -16,9 +13,7 @@ export default function Component() {
         <Hero />
         <About />
         <Services />
-        <Skills />
         <Projects />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />
